@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="dav.6/dav.6.csproj" Id="a8366084-4dd8-4de8-b0a3-6adbff23b8f6" />
   <Project Path="davaleba4/davaleba4.csproj" Id="6271f3b0-1a3b-4a09-a7e3-704016307c8d" />
   <Project Path="davaleba5/davaleba5.csproj" Id="37140316-0bce-456c-bce0-a07612f1cc41" />
   <Project Path="home.3/home.3.csproj" Id="b2365fbf-d195-41ef-822b-c8920167ba58" />
