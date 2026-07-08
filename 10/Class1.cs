@@ -39,6 +39,9 @@ namespace lec10.classes
             Console.WriteLine("tanamsromlebi qveynis mixedvit " + country);
             foreach (var item in employs)
             {
+                if (item == null)
+                    continue;
+
                 if (item.country == country)
                 {
                     Console.WriteLine(item.name + " " + item.surename);
