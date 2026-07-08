@@ -1,4 +1,5 @@
 ﻿using System;
+using Shared;
 
 namespace _8
 
@@ -9,37 +10,14 @@ namespace _8
         {
             Restaurant product = new Restaurant();
 
-            Console.WriteLine("id");
-            string idInput = Console.ReadLine();
-            Console.WriteLine("name");
-            string nameInput = Console.ReadLine();
-            Console.WriteLine("price");
-            string priceInput = Console.ReadLine();
-            Console.WriteLine("image");
-            string imageInput = Console.ReadLine();
-            Console.WriteLine("nuts");
-            string nutsInput = Console.ReadLine();
-            Console.WriteLine("vegetarian");
-            string vegetarianInput = Console.ReadLine();
-            Console.WriteLine("spicines");
-            string spicinessInput = Console.ReadLine();
-            Console.WriteLine("category");
-            string categoryInput = Console.ReadLine();
-
-            int.TryParse(idInput, out int parsedId);
-            int.TryParse(priceInput, out int parsedPrice);
-            bool.TryParse(nutsInput, out bool parsedNuts);
-            bool.TryParse(vegetarianInput, out bool parsedVegetarian);
-            int.TryParse(spicinessInput, out int parsedSpiciness);
-
-            product.Id = parsedId;
-            product.Name = nameInput;
-            product.Price = parsedPrice;
-            product.Image = imageInput;
-            product.Nuts = parsedNuts;
-            product.Vegetarian = parsedVegetarian;
-            product.Spiciness = parsedSpiciness;
-            product.Category = categoryInput;
+            product.Id = ConsoleInput.ReadInt("id");
+            product.Name = ConsoleInput.ReadString("name");
+            product.Price = ConsoleInput.ReadInt("price");
+            product.Image = ConsoleInput.ReadString("image");
+            product.Nuts = ConsoleInput.ReadBool("nuts");
+            product.Vegetarian = ConsoleInput.ReadBool("vegetarian");
+            product.Spiciness = ConsoleInput.ReadInt("spicines");
+            product.Category = ConsoleInput.ReadString("category");
 
 
             product.DisplayInfo();
