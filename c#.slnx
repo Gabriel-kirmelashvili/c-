@@ -7,4 +7,6 @@
   <Project Path="davaleba5/davaleba5.csproj" Id="37140316-0bce-456c-bce0-a07612f1cc41" />
   <Project Path="home.3/home.3.csproj" Id="b2365fbf-d195-41ef-822b-c8920167ba58" />
   <Project Path="homework2/homework2.csproj" />
+  <Project Path="10.Tests/10.Tests.csproj" />
+  <Project Path="8.Tests/8.Tests.csproj" />
 </Solution>
