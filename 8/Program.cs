@@ -9,37 +9,14 @@ namespace _8
         {
             Restaurant product = new Restaurant();
 
-            Console.WriteLine("id");
-            string idInput = Console.ReadLine();
-            Console.WriteLine("name");
-            string nameInput = Console.ReadLine();
-            Console.WriteLine("price");
-            string priceInput = Console.ReadLine();
-            Console.WriteLine("image");
-            string imageInput = Console.ReadLine();
-            Console.WriteLine("nuts");
-            string nutsInput = Console.ReadLine();
-            Console.WriteLine("vegetarian");
-            string vegetarianInput = Console.ReadLine();
-            Console.WriteLine("spicines");
-            string spicinessInput = Console.ReadLine();
-            Console.WriteLine("category");
-            string categoryInput = Console.ReadLine();
-
-            int.TryParse(idInput, out int parsedId);
-            int.TryParse(priceInput, out int parsedPrice);
-            bool.TryParse(nutsInput, out bool parsedNuts);
-            bool.TryParse(vegetarianInput, out bool parsedVegetarian);
-            int.TryParse(spicinessInput, out int parsedSpiciness);
-
-            product.Id = parsedId;
-            product.Name = nameInput;
-            product.Price = parsedPrice;
-            product.Image = imageInput;
-            product.Nuts = parsedNuts;
-            product.Vegetarian = parsedVegetarian;
-            product.Spiciness = parsedSpiciness;
-            product.Category = categoryInput;
+            product.Id = ReadInt("id");
+            product.Name = ReadText("name");
+            product.Price = ReadInt("price");
+            product.Image = ReadText("image");
+            product.Nuts = ReadBool("nuts");
+            product.Vegetarian = ReadBool("vegetarian");
+            product.Spiciness = ReadInt("spicines");
+            product.Category = ReadText("category");
 
 
             product.DisplayInfo();
@@ -48,16 +25,55 @@ namespace _8
             product.ApplyDiscount(15);
         }
 
+        static string ReadText(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                string? input = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(input))
+                    return input;
+
+                Console.WriteLine($"'{prompt}' cannot be empty. Please try again.");
+            }
+        }
+
+        static int ReadInt(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                string? input = Console.ReadLine();
+                if (int.TryParse(input, out int value))
+                    return value;
+
+                Console.WriteLine($"'{input}' is not a valid whole number for '{prompt}'. Please try again.");
+            }
+        }
+
+        static bool ReadBool(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                string? input = Console.ReadLine();
+                if (bool.TryParse(input, out bool value))
+                    return value;
+
+                Console.WriteLine($"'{input}' is not a valid true/false value for '{prompt}'. Please try again.");
+            }
+        }
+
         public class Restaurant
         {
             public int Id { get; set; }
-            public string Name { get; set; }
+            public string Name { get; set; } = string.Empty;
             public int Price { get; set; }
             public bool Nuts { get; set; }
-            public string Image { get; set; }
+            public string Image { get; set; } = string.Empty;
             public bool Vegetarian { get; set; }
             public int Spiciness { get; set; }
-            public string Category { get; set; }
+            public string Category { get; set; } = string.Empty;
 
             public void DisplayInfo()
             {
